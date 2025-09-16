@@ -1,0 +1,27 @@
+# Copy this to `.env` for local dev
+# On Railway, set these in the Variables section
+
+# --- Core ---
+N8N_ENCRYPTION_KEY=replace-with-a-long-random-string
+GENERIC_TIMEZONE=America/New_York
+
+# --- Web / URLs ---
+# For local dev
+N8N_PORT=5678
+N8N_PROTOCOL=http
+N8N_HOST=localhost
+WEBHOOK_URL=http://localhost:5678/
+
+# For Railway (after first deploy, replace with actual domain)
+# N8N_PROTOCOL=https
+# N8N_HOST=your-app-name.up.railway.app
+# WEBHOOK_URL=https://your-app-name.up.railway.app/
+
+# --- Database (Postgres on Railway) ---
+DB_TYPE=postgresdb
+DB_POSTGRESDB_HOST=
+DB_POSTGRESDB_PORT=5432
+DB_POSTGRESDB_DATABASE=
+DB_POSTGRESDB_USER=
+DB_POSTGRESDB_PASSWORD=
+DB_POSTGRESDB_SCHEMA=public

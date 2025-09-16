@@ -1,0 +1,8 @@
+# Use the official n8n Docker image
+FROM n8nio/n8n:latest
+
+# Railway sets $PORT automatically, pass it through
+ENV N8N_PORT=${PORT}
+
+# The base image already runs `n8n` as entrypoint
+# Nothing else is needed unless you want customizations
