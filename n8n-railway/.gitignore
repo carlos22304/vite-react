@@ -1,12 +1,7 @@
-# Local env files
-.env
-
-# Sensitive data
+﻿.env
 .n8n/
 *.sqlite
 *.db
-
-# Node / Docker junk
 node_modules/
 dist/
 build/
