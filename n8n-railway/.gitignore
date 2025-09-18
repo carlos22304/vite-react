@@ -1,7 +1,0 @@
-﻿.env
-.n8n/
-*.sqlite
-*.db
-node_modules/
-dist/
-build/
