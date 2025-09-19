@@ -1,5 +1,5 @@
 // src/api.js
-const base = ""; // rely on Netlify redirect in production
+const base = ""; // Netlify redirect handles prod
 
 export async function askTriApp(question) {
   const res = await fetch(`${base}/webhook/tri-app2`, {
@@ -8,15 +8,18 @@ export async function askTriApp(question) {
     body: JSON.stringify({ question }),
   });
 
+  // Read the body ONCE
+  const text = await res.text();
+
   if (!res.ok) {
-    let body = "";
-    try { body = await res.text(); } catch {}
-    throw new Error(`HTTP ${res.status}${body ? `: ${body}` : ""}`);
+    // include backend error text if present
+    throw new Error(`HTTP ${res.status}${text ? `: ${text}` : ""}`);
   }
 
+  // Try to parse JSON, otherwise return plain text
   try {
-    return await res.json();
+    return JSON.parse(text);
   } catch {
-    return await res.text();
+    return text;
   }
 }
