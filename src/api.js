@@ -1,5 +1,4 @@
-// src/api.js
-const base = ""; // dev: Vite proxy → localhost:5680; prod: Netlify proxy → Railway
+const base = ""; // dev -> Vite proxy, prod -> Netlify proxy
 
 export async function askTriApp(question) {
   const res = await fetch(`${base}/webhook/tri-app2`, {

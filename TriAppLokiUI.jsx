@@ -1,4 +1,3 @@
-// src/TriAppLokiUI.jsx
 import { useState } from "react";
 import { askTriApp } from "./api";
 
@@ -39,11 +38,7 @@ export default function TriAppLokiUI() {
       </form>
 
       {error && <div style={{ color: "crimson", marginTop: 12 }}>Error: {error}</div>}
-      {out && (
-        <pre style={{ marginTop: 12, whiteSpace: "pre-wrap" }}>
-          {out}
-        </pre>
-      )}
+      {out && <pre style={{ marginTop: 12, whiteSpace: "pre-wrap" }}>{out}</pre>}
     </div>
   );
 }
