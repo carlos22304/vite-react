@@ -1,11 +1,14 @@
 [build]
   command = "npm run build"
-  publish = "dist"
+  publish  = "dist"
 
-[build.environment]
-  NODE_VERSION = "20"
+[[redirects]]
+  from = "/webhook/*"
+  to   = "https://primary-production-fe14.up.railway.app/webhook/:splat"
+  status = 200
+  force  = true
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to   = "/index.html"
   status = 200
