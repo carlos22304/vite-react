@@ -1,4 +1,5 @@
-const base = ""; // dev -> Vite proxy, prod -> Netlify proxy
+// src/api.js
+const base = ""; // rely on Netlify redirect in production AND dev proxy locally
 
 export async function askTriApp(question) {
   const res = await fetch(`${base}/webhook/tri-app2`, {
